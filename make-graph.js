@@ -55,6 +55,7 @@ Papa.parse("class-data.csv", {
     delimiter: ";; ",
     download: true,
     complete: function (results) {
+        console.log(results.data);
         initialiseNetwork(parseCsvData(results.data));
     }
 });
