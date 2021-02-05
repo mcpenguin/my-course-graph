@@ -62,8 +62,12 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, cou
     if (courseSubject === "MATH") {
         colorShapeProperties = {
             color: {
-                background: 'green',
+                background: '#066b0f',
                 border: 'black',
+                highlight: {
+                    background: '#81f087',
+                    border: 'black', 
+                }
             },
             shape: 'diamond',
             size: 15,
@@ -74,6 +78,10 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, cou
             color: {
                 background: '#d5db16',
                 border: 'black',
+                highlight: {
+                    background: '#f7fa8c',
+                    border: 'black', 
+                }
             },
             shape: 'hexagon',
             size: 15,
@@ -82,8 +90,12 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, cou
     else if (courseSubject === "CS") {
         colorShapeProperties = {
             color: {
-                background: 'orange',
+                background: '#dea726',
                 border: 'black',
+                highlight: {
+                    background: '#f5d27f',
+                    border: 'black', 
+                }
             },
             shape: 'star',
             size: 15,
@@ -103,8 +115,12 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, cou
     else if (courseSubject === "SPCOM" || courseSubject === "ENGL") {
         colorShapeProperties = {
             color: {
-                background: 'purple',
+                background: '#661499',
                 border: 'black',
+                highlight: {
+                    background: '#c578f5',
+                    border: 'black', 
+                }
             },
             shape: 'triangle',
             size: 12,
@@ -113,8 +129,12 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, cou
     else {
         colorShapeProperties = {
             color: {
-                background: 'red',
+                background: '#a30b2c',
                 border: 'black',
+                highlight: {
+                    background: '#e66e88',
+                    border: 'black', 
+                }
             },
             shape: 'square',
             size: 12,
