@@ -28,13 +28,3 @@ STAT 241;; Statistics (Advanced Level);; This course provides a systematic appro
 CS 240(e);; Data Structures and Data Management;; Introduction to widely used and effective methods of data organization, focusing on data structures, their algorithms, and the performance of these algorithms. Specific topics include priority queues, sorting, dictionaries, data structures for text processing.;; CS 245, CS 246, STAT 240;; 5
 CS 241(e);; Foundations of Sequential Programs;; The relationship between high-level languages and the computer architecture that underlies their implementation, including basic machine architecture, assemblers, specification and translation of programming languages, linkers and loaders, block-structured languages, parameter passing mechanisms, and comparison of programming languages.;; CS 146;; 5
 CS 251(e);; Computer Organisation and Design;; Overview of computer organization and performance. Basics of digital logic design. Combinational and sequential elements. Data representation and manipulation. Basics of processor design. Pipelining. Memory hierarchies. Multiprocessors.;; CS 146;; 5
-
-
-
-
-
-
-
-
-
-
