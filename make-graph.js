@@ -33,8 +33,8 @@ function initialiseNetwork(classData) {
             hierarchical: {
                 enabled: true,
                 direction: 'LR',
-                nodeSpacing: 350,
-                levelSeparation: 350,
+                nodeSpacing: 300,
+                levelSeparation: 400,
             }
         },
         nodes: {

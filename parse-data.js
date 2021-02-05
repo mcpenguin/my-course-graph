@@ -1,5 +1,11 @@
 import { parseCsvData } from "./parseCsvData.js";
 
+const fall = "🍁";
+const winter = "❄️";
+const spring = "🌷";
+
+
+
 // stringParse(string): takes in a single "line" string, parses it; 
 // ie includes \n characters every ~50 characters for brevity 
 function stringParse(string) {
@@ -32,14 +38,22 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel) {
         id: courseCode,
         label: courseCode,
         title: courseDescription,
-        shape: 'diamond',
-        size: 20,
-        color: '#abd9b7',
         level: courseLevel,
+        labelHighLightBold: true,
+        borderWidth: 1,
+        // color: {
+        //     border: 'green',
+        // },
+        font: {
+            face: 'arial',
+            size: 18,
+            multi: 'html',
+        },
         nodes: {
-            font: {
-                multi: 'html',
-            },
+
+        },
+        shapeProperties: {
+            borderRadius: 2.5,
         }
     }
 
@@ -52,28 +66,40 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel) {
     // console.log(courseSubject);
     if (courseSubject === "MATH") {
         colorShapeProperties = {
-            color: 'green',
+            color: {
+                background: 'green',
+                border: 'black',
+            },
             shape: 'diamond',
             size: 15,
         };
     }
     else if (courseSubject === "STAT") {
         colorShapeProperties = {
-            color: '#d5db16',
+            color: {
+                background: '#d5db16',
+                border: 'black',
+            },
             shape: 'hexagon',
             size: 15,
         }
     }
     else if (courseSubject === "CS") {
         colorShapeProperties = {
-            color: 'orange',
+            color: {
+                background: 'orange',
+                border: 'black',
+            },
             shape: 'star',
             size: 15,
         };
     }
     else if (courseSubject === "HS") {
         colorShapeProperties = {
-            color: 'blue',
+            color: {
+                background: 'blue',
+                border: 'black',
+            },
             shape: 'dot',
             size: 8,
             fixed: true,
@@ -81,14 +107,20 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel) {
     }
     else if (courseSubject === "SPCOM" || courseSubject === "ENGL") {
         colorShapeProperties = {
-            color: 'purple',
+            color: {
+                background: 'purple',
+                border: 'black',
+            },
             shape: 'triangle',
             size: 12,
         }
     }
     else {
         colorShapeProperties = {
-            color: 'red',
+            color: {
+                background: 'red',
+                border: 'black',
+            },
             shape: 'square',
             size: 12,
         };
@@ -115,7 +147,7 @@ function generateCourseEdge(courseCode, courseCodePrereq) {
 
 // parseClassData: returns parsed class data (for nodes)
 function parseClassData(classData) {
-    var c; 
+    var c;
     var parsedClassData = []; // for node data
 
     for (c in classData) {
