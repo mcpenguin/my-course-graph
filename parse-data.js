@@ -1,11 +1,5 @@
 import { parseCsvData } from "./parseCsvData.js";
 
-const fall = "🍁";
-const winter = "❄️";
-const spring = "🌷";
-
-
-
 // stringParse(string): takes in a single "line" string, parses it; 
 // ie includes \n characters every ~50 characters for brevity 
 function stringParse(string) {
@@ -30,13 +24,14 @@ function stringParse(string) {
 
 // generateCourseData: takes in parameters, generates node for course
 // that can be used in make-graph.js
-function generateCourseNode(courseCode, courseName, courseDesc, courseLevel) {
+function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, courseSeasons) {
     const courseDescription = courseCode + " (" + courseName + ")\n"
         + "--------------------------------" + "\n"
         + stringParse(courseDesc);
+    const courseTitle = (courseCode === "HS") ? courseCode : courseCode + " " + courseSeasons;
     var courseNode = {
         id: courseCode,
-        label: courseCode,
+        label: courseTitle,
         title: courseDescription,
         level: courseLevel,
         labelHighLightBold: true,
@@ -45,7 +40,7 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel) {
         //     border: 'green',
         // },
         font: {
-            face: 'arial',
+            face: 'Lato',
             size: 18,
             multi: 'html',
         },
@@ -152,12 +147,13 @@ function parseClassData(classData) {
 
     for (c in classData) {
         let course = classData[c];
-        // console.log(course.courseCode);
+        // console.log(course);
         parsedClassData.push(generateCourseNode(
             course.courseCode,
             course.courseName,
             course.courseDescription,
             course.courseLevel,
+            course.courseSeasons,
         ));
     }
     return parsedClassData;
