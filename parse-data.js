@@ -101,6 +101,20 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, cou
             size: 15,
         };
     }
+    else if (courseSubject === "CO") {
+        colorShapeProperties = {
+            color: {
+                background: '#0ebfc2',
+                border: 'black',
+                highlight: {
+                    background: '#63e8eb',
+                    border: 'black', 
+                }
+            },
+            shape: 'triangleDown',
+            size: 12,
+        };
+    }
     else if (courseSubject === "HS") {
         colorShapeProperties = {
             color: {
