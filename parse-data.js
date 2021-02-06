@@ -24,7 +24,7 @@ function stringParse(string) {
 
 // generateCourseData: takes in parameters, generates node for course
 // that can be used in make-graph.js
-function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, courseSeasons) {
+function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, courseSeasons, coursePrereq) {
     const courseDescription = courseCode + " (" + courseName + ")\n"
         + "--------------------------------" + "\n"
         + stringParse(courseDesc);
@@ -59,10 +59,10 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, cou
     let courseSubject = courseCode.split(" ")[0];
     let colorShapeProperties = {};
     // console.log(courseSubject);
-    if (courseSubject === "MATH") {
+    if (courseSubject === "MATH") { // green
         colorShapeProperties = {
             color: {
-                background: '#066b0f',
+                background: '#169131',
                 border: 'black',
                 highlight: {
                     background: '#81f087',
@@ -73,7 +73,7 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, cou
             size: 15,
         };
     }
-    else if (courseSubject === "STAT") {
+    else if (courseSubject === "STAT") { // yellow
         colorShapeProperties = {
             color: {
                 background: '#d5db16',
@@ -87,13 +87,13 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, cou
             size: 15,
         }
     }
-    else if (courseSubject === "CS") {
+    else if (courseSubject === "CS") { // orange
         colorShapeProperties = {
             color: {
-                background: '#dea726',
+                background: '#eb7c28',
                 border: 'black',
                 highlight: {
-                    background: '#f5d27f',
+                    background: '#edb68c',
                     border: 'black', 
                 }
             },
@@ -101,7 +101,7 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, cou
             size: 15,
         };
     }
-    else if (courseSubject === "CO") {
+    else if (courseSubject === "CO") { // aqua
         colorShapeProperties = {
             color: {
                 background: '#0ebfc2',
@@ -115,7 +115,7 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, cou
             size: 12,
         };
     }
-    else if (courseSubject === "HS") {
+    else if (courseSubject === "HS") { // blue
         colorShapeProperties = {
             color: {
                 background: 'blue',
@@ -126,7 +126,7 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, cou
             fixed: true,
         }
     }
-    else if (courseSubject === "SPCOM" || courseSubject === "ENGL") {
+    else if (courseSubject === "SPCOM" || courseSubject === "ENGL") { // purple
         colorShapeProperties = {
             color: {
                 background: '#661499',
@@ -140,7 +140,7 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, cou
             size: 12,
         }
     }
-    else {
+    else { // red
         colorShapeProperties = {
             color: {
                 background: '#a30b2c',
@@ -188,6 +188,7 @@ function parseClassData(classData) {
             course.courseDescription,
             course.courseLevel,
             course.courseSeasons,
+            course.courseCodePrereq
         ));
     }
     return parsedClassData;
