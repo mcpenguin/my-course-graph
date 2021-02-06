@@ -45,7 +45,7 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, cou
         // },
         font: {
             face: 'Lato',
-            size: 22,
+            size: 16,
             multi: 'html',
         },
         nodes: {
@@ -118,6 +118,20 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, cou
             shape: 'triangleDown',
             size: 12,
         };
+    }
+    else if (courseSubject === "PMATH") { // pink
+        colorShapeProperties = {
+            color: {
+                background: '#d40dc0',
+                border: 'black',
+                highlight: {
+                    background: '#f294e9',
+                    border: 'black', 
+                }
+            },
+            shape: 'dot',
+            size: 12,
+        }
     }
     else if (courseSubject === "HS") { // blue
         colorShapeProperties = {

@@ -34,8 +34,8 @@ function initialiseNetwork(classData) {
             hierarchical: {
                 enabled: true,
                 direction: 'LR',
-                nodeSpacing: 100,
-                levelSeparation: 300,
+                nodeSpacing: 300,
+                levelSeparation: 400,
             },
             randomSeed: '0.5650852741192154:1612598600483',
         },

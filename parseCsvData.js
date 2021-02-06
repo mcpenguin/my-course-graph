@@ -4,6 +4,7 @@
 const fall = "🍁";
 const winter = "❄️";
 const spring = "🌷";
+const question = "❓";
 
 // makeSeasonString(seasonList): makes string of season emojis 
 // based on season list
@@ -17,8 +18,11 @@ function makeSeasonString(seasonList) {
         else if (car === 'W') {
             result += winter;
         }
-        else {
+        else if (car === "S") {
             result += spring;
+        }
+        else {
+            result += question;
         }
         seasonList = cdr;
     }
