@@ -48,7 +48,7 @@ function parseCsvData(data) {
             courseSeasons: cs,
         }
     }
-    console.log(parsedData);
+    // console.log(parsedData);
     return parsedData;
 }
 

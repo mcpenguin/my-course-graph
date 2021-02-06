@@ -55,12 +55,12 @@ function initialiseNetwork(classData) {
     // the node
     // change all arrows to black first
     network.on("selectNode", function (params) {
-        console.log(params.edges);
+        // console.log(params.edges);
         // console.log(params.nodes[0]);
         let selectedNodeId = params.nodes[0];
         let selectedNode = nodes.get(selectedNodeId);
         let selectedNodeBackground = selectedNode.color.background;
-        console.log(selectedNode.color);
+        // console.log(selectedNode.color);
         // params.edges = edges connected to node
         let edgeList = [];
         var edge;
@@ -71,7 +71,7 @@ function initialiseNetwork(classData) {
         // edgeList now contains all the *edges* (NOT just edge ids)
         // that is connected to the node
         // console.log(edgeList);
-        console.log("#" + selectedNode.color.background);
+        // console.log("#" + selectedNode.color.background);
 
         for (var edge in edgeList) {
             // console.log(edgeList[edge].id.split(" => "));
@@ -95,7 +95,7 @@ function initialiseNetwork(classData) {
                     id: edgeList[edge].id,
                 }
             }
-            console.log(edgeList[edge]);
+            // console.log(edgeList[edge]);
             edges.update(edgeList[edge]);
         }
     })
@@ -107,7 +107,7 @@ function initialiseNetwork(classData) {
         // edgeIdList contains all the edge ids of the edges
         // that were connected to the deselected node
         let edgeIdList = params.previousSelection.nodes[0].edges;
-        console.log(edgeIdList);
+        // console.log(edgeIdList);
         // params.edges = edges connected to node
         let edgeList = [];
         var edge;
@@ -117,7 +117,7 @@ function initialiseNetwork(classData) {
         }
         // edgeList now contains all the *edges* (NOT just edge ids)
         // that is connected to the node
-        console.log(edgeList);
+        // console.log(edgeList);
 
         for (var edge in edgeList) {
             edgeList[edge] = {
@@ -141,7 +141,7 @@ Papa.parse("class-data.csv", {
     delimiter: ";; ",
     download: true,
     complete: function (results) {
-        console.log(results.data);
+        // console.log(results.data);
         initialiseNetwork(parseCsvData(results.data));
     }
 });

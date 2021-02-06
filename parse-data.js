@@ -1,5 +1,9 @@
 import { parseCsvData } from "./parseCsvData.js";
 
+// parseData.js: takes in data from csv, parses it into
+// respective node and edge data
+// to be sent to make-graph.js
+
 // stringParse(string): takes in a single "line" string, parses it; 
 // ie includes \n characters every ~50 characters for brevity 
 function stringParse(string) {
@@ -35,13 +39,13 @@ function generateCourseNode(courseCode, courseName, courseDesc, courseLevel, cou
         title: courseDescription,
         level: courseLevel,
         labelHighLightBold: true,
-        borderWidth: 1,
+        borderWidth: 1.5,
         // color: {
         //     border: 'green',
         // },
         font: {
             face: 'Lato',
-            size: 18,
+            size: 22,
             multi: 'html',
         },
         nodes: {
