@@ -51,6 +51,8 @@ function initialiseNetwork(classData) {
     var network = new vis.Network(container, data, options);
     network.startSimulation();
 
+    console.log(nodes);
+
     // when node is selected, change color of edges coming to and from
     // the node
     // change all arrows to black first
